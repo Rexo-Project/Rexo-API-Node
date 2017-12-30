@@ -36,7 +36,7 @@ module.exports = (function() {
       if(err) {
         log('error', 'Error Retrieving %s! :(\n', dataKey, err);
       } else {
-        log('debug', 'Data Retrieved:\n', res.rows);
+        log('silly', 'Data Retrieved:\n', res.rows);
       }
 
       callback(err, (!err ? res.rows[0][dataKey] : null));

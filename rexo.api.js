@@ -2,7 +2,8 @@ var winston = require('winston'),
     log = winston.log,
     controller = require(__dirname + '/controller.db.js'),
     sendResponse = function(res, callback) {
-      log('debug', 'Sending Response:\n', res);
+      log('debug', 'Sending Status %s', res.statusCode);
+      log('silly', 'Sending Response:\n', res);
       res.body = JSON.stringify(res.body);
       callback(null, res);
     };
